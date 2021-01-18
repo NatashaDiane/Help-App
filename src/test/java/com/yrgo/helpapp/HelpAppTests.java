@@ -1,10 +1,10 @@
-package com.natasha.helpdeskforstudents;
+package com.yrgo.helpapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Helpdeskforstudentsversion2ApplicationTests {
+class HelpAppTests {
 
 	@Test
 	void contextLoads() {
