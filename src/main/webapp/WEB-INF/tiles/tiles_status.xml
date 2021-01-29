@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">  
+
+<tiles-definitions>
+	<definition name="status.index" extends="user_template">
+		<put-attribute name="content" value="/WEB-INF/views/status/index.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="status.add" extends="user_template">
+		<put-attribute name="content" value="/WEB-INF/views/status/add.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="status.edit" extends="user_template">
+		<put-attribute name="content" value="/WEB-INF/views/status/edit.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

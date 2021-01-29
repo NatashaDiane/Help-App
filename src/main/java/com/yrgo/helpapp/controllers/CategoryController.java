@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.yrgo.helpapp.entities.Category;
-import com.yrgo.helpapp.services.CategoryService;
+import com.yrgo.helpapp.services.CategoryServiceImplementation;
 
 @Controller
 @RequestMapping(value = "category")
 public class CategoryController {
 	
 	@Autowired
-	private CategoryService categoryService;
+	private CategoryServiceImplementation categoryService;
 	
 	//Shows all the Categories that are available
 	@RequestMapping(value= {"", "index"}, method = RequestMethod.GET)

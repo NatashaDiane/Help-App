@@ -13,4 +13,6 @@ public interface AccountService extends UserDetailsService{
 	
 	public Account findByUsername(String username);
 	
+	public void delete(int id);
+	
 }

@@ -16,5 +16,9 @@
 	<definition name="account.add" extends="user_template">
 		<put-attribute name="content" value="/WEB-INF/views/account/add.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="account.edit" extends="user_template">
+		<put-attribute name="content" value="/WEB-INF/views/account/edit.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>

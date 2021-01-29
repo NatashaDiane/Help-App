@@ -21,6 +21,7 @@ import javax.persistence.TemporalType;
 public class Help implements java.io.Serializable {
 
 	private Integer helpId;
+	private Account account;
 	private Category category;
 	private Status status;
 	private String title;
@@ -31,7 +32,8 @@ public class Help implements java.io.Serializable {
 	public Help() {
 	}
 
-	public Help(Category category, Status status, String title, String description, Date createdDate) {
+	public Help(Account account, Category category, Status status, String title, String description, Date createdDate) {
+		this.account = account;
 		this.category = category;
 		this.status = status;
 		this.title = title;
@@ -39,8 +41,9 @@ public class Help implements java.io.Serializable {
 		this.createdDate = createdDate;
 	}
 
-	public Help(Category category, Status status, String title, String description, Date createdDate,
+	public Help(Account account, Category category, Status status, String title, String description, Date createdDate,
 			Set<Discussion> discussions) {
+		this.account = account;
 		this.category = category;
 		this.status = status;
 		this.title = title;
@@ -60,6 +63,16 @@ public class Help implements java.io.Serializable {
 	public void setHelpId(Integer helpId) {
 		this.helpId = helpId;
 	}
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "account_id", nullable = false)
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id", nullable = false)
@@ -72,7 +85,7 @@ public class Help implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "status_id", nullable = false)
+	@JoinColumn(name = "status_id", nullable = true)
 	public Status getStatus() {
 		return this.status;
 	}

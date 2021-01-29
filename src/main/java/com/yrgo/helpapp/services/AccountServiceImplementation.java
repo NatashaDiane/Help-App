@@ -48,5 +48,10 @@ public class AccountServiceImplementation implements AccountService {
 	public Iterable<Account> findAll() {
 		return accountRepository.findAll();
 	}
+	
+	@Override
+	public void delete(int id) {
+		accountRepository.deleteById(id);
+	}
 
 }

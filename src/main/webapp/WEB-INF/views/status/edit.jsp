@@ -4,12 +4,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Content Header (Page header) -->
 <section class="content-header">
-	<h1>Edit Category</h1>
+	<h1>Edit Status</h1>
 	<ol class="breadcrumb">
 		<li><a href="${pageContext.request.contextPath}/dashboard"><i
 				class="fa fa-dashboard"></i> Home</a></li>
-		<li><a href="${pageContext.request.contextPath}/category/index">Show all categories</a></li>		
-		<li class="active">Edit category</li>
+		<li class="active">Edit Status</li>
 	</ol>
 </section>
 
@@ -23,28 +22,34 @@
 						<h4>Failed to save. The name is already on the list. No
 							duplicates please!</h4>
 					</div>
-
 				</c:if>
 
 				<!-- form start -->
-				<s:form method="post" modelAttribute="category"
-					action="${pageContext.request.contextPath}/category/edit"
-					role="form">
+				<s:form method="post" modelAttribute="status"
+					action="${pageContext.request.contextPath}/status/edit" role="form">
 					<div class="box-body">
 						<div class="form-group">
 							<label for="name">Name</label>
 							<s:input path="name" cssClass="form-control" id="name" />
 						</div>
 
+						<div class="form-group">
+							<label for="color">Color</label>
+							<s:select path="color" cssClass="form-control" id="color">
+								<s:option value="success">Green</s:option>
+								<s:option value="info">Blue</s:option>
+							</s:select>
+						</div>
+
 						<div class="checkbox">
-							<label><s:checkbox path="status" />Status</label>
+							<label><s:checkbox path="display" />Display</label>
 						</div>
 
 					</div>
 
 					<div class="box-footer">
 						<button type="submit" class="btn btn-primary">Save</button>
-						<s:hidden path="categoryId" />
+						<s:hidden path="statusId" />
 					</div>
 				</s:form>
 			</div>

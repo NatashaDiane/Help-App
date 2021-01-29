@@ -25,7 +25,9 @@ public class TemplateConfiguration implements WebMvcConfigurer{
 				"/WEB-INF/tiles/tiles_dashboard.xml",
 				"/WEB-INF/tiles/tiles_login.xml",
 				"/WEB-INF/tiles/tiles_account.xml",
-				"/WEB-INF/tiles/tiles_category.xml"
+				"/WEB-INF/tiles/tiles_category.xml",
+				"/WEB-INF/tiles/tiles_status.xml",
+				"/WEB-INF/tiles/tiles_help.xml"
 		});
 		return configurer;
 		

@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <section class="content-header">
-	<h1>Show All Categories</h1>
+	<h1>Status List</h1>
 	<ol class="breadcrumb">
 		<li><a href="${pageContext.request.contextPath}/dashboard"><i
 				class="fa fa-dashboard"></i> Home</a></li>
-		<li class="active">Show all categories</li>
+		<li class="active">Status List</li>
 	</ol>
 </section>
 
@@ -29,20 +29,22 @@
 							<tr>
 								<th>Id</th>
 								<th>Name</th>
-								<th>Status</th>
+								<th>Color</th>
+								<th>Display</th>
 								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="category" items="${categories}">
+							<c:forEach var="status" items="${statuses}">
 								<tr>
-									<td>${category.categoryId}</td>
-									<td>${category.name}</td>
-									<td>${category.status ? "Show" : "Hide"}</td>
+									<td>${status.statusId}</td>
+									<td>${status.name}</td>
+									<td><span class="label label-${status.color}">&nbsp;</span></td>
+									<td>${status.display ? "Show" : "Hide"}</td>
 									<td>
-										<a href="${pageContext.request.contextPath}/category/edit/${category.categoryId}"><i class="fa fa-edit"></i></a>
+										<a href="${pageContext.request.contextPath}/status/edit/${status.statusId}"><i class="fa fa-edit"></i></a>
 										<span>&nbsp;&nbsp;</span> 
-										<a href="${pageContext.request.contextPath}/category/delete/${category.categoryId}"
+										<a href="${pageContext.request.contextPath}/status/delete/${status.statusId}"
 										onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a></td>
 								</tr>
 							</c:forEach>
@@ -51,6 +53,7 @@
 							<tr>
 								<th>Id</th>
 								<th>Name</th>
+								<th>Color</th>
 								<th>Status</th>
 								<th>Action</th>
 							</tr>

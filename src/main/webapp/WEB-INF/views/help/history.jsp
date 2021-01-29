@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <section class="content-header">
-	<h1>Show All Categories</h1>
+	<h1>Help Requests</h1>
 	<ol class="breadcrumb">
 		<li><a href="${pageContext.request.contextPath}/dashboard"><i
 				class="fa fa-dashboard"></i> Home</a></li>
-		<li class="active">Show all categories</li>
+		<li class="active">Help requests</li>
 	</ol>
 </section>
 
@@ -27,31 +28,33 @@
 					<table id="example2" class="table table-bordered table-hover">
 						<thead>
 							<tr>
-								<th>Id</th>
-								<th>Name</th>
-								<th>Status</th>
+								<th>Student</th>
+								<th>Title</th>
+								<th>Created Date</th>
+								<th>Category</th>
 								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="category" items="${categories}">
+							<c:forEach var="help" items="${requests}">
 								<tr>
-									<td>${category.categoryId}</td>
-									<td>${category.name}</td>
-									<td>${category.status ? "Show" : "Hide"}</td>
-									<td>
-										<a href="${pageContext.request.contextPath}/category/edit/${category.categoryId}"><i class="fa fa-edit"></i></a>
-										<span>&nbsp;&nbsp;</span> 
-										<a href="${pageContext.request.contextPath}/category/delete/${category.categoryId}"
-										onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a></td>
+									<td>${help.account.fullName}</td>
+									<td>${help.title}</td>
+									<td><fmt:formatDate var="createdDate"
+											value="${help.createdDate}" /> ${createdDate}</td>
+									<td>${help.category.name}</td>
+									<td><a
+										href="${pageContext.request.contextPath}/help/details/${help.helpId}">Details</a>
+									</td>
 								</tr>
 							</c:forEach>
 						</tbody>
 						<tfoot>
 							<tr>
-								<th>Id</th>
-								<th>Name</th>
-								<th>Status</th>
+								<th>Student</th>
+								<th>Title</th>
+								<th>Created Date</th>
+								<th>Category</th>
 								<th>Action</th>
 							</tr>
 						</tfoot>

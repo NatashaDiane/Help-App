@@ -6,19 +6,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.yrgo.helpapp.entities.Account;
-import com.yrgo.helpapp.services.AccountService;
+import com.yrgo.helpapp.services.AccountServiceImplementation;
 
 @Controller
 @RequestMapping(value = "account")
 public class AccountController {
 	
 	@Autowired
-	private AccountService accountService;
+	private AccountServiceImplementation accountService;
 	
+	//Shows all the accounts
 	@RequestMapping(value = {"", "index"}, method = RequestMethod.GET)
 	public String index(ModelMap modelMap) {
 		modelMap.put("accounts", accountService.findAll());
@@ -45,7 +48,7 @@ public class AccountController {
 	}
 	
 	
-	//methods for adding and saving a student account
+	//methods for adding and saving an account
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public String add(ModelMap modelMap) {
 		Account account = new Account();
@@ -65,7 +68,18 @@ public class AccountController {
 			return "account.add";
 			
 		}
-
+	}
+	
+	//delete an existing account
+	@RequestMapping(value= "delete/{accountId}", method = RequestMethod.GET)
+	public String delete(@PathVariable("accountId") int id, RedirectAttributes redirectAttributes) {
+		try {
+			accountService.delete(id);
+		}catch(Exception e) {
+			redirectAttributes.addFlashAttribute("error", "Failed to delete");
+		}
+		
+		return "redirect:/account";
 	}
 
 }

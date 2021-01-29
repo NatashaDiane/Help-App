@@ -24,9 +24,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		httpSecurity.cors().and().csrf().disable();
 		
 		httpSecurity.authorizeRequests()
-					.antMatchers("/dashboard/**").access("hasRole('ROLE_TEACHER') or hasRole('ROLE_STUDENT')")
-					.antMatchers("/account/**").access("hasRole('ROLE_TEACHER') or hasRole('ROLE_STUDENT')")
-					.antMatchers("/category/**").access("hasRole('ROLE_TEACHER') or hasRole('ROLE_STUDENT')")
+					.antMatchers("/dashboard/**").access("hasRole('ROLE_TEACHER') or hasRole('ROLE_STUDENT') or hasRole('ROLE_ADMIN')")
+					.antMatchers("/account/**").access("hasRole('ROLE_TEACHER') or hasRole('ROLE_STUDENT') or hasRole('ROLE_ADMIN')")
+					.antMatchers("/category/**").access("hasRole('ROLE_TEACHER') or hasRole('ROLE_STUDENT') or hasRole('ROLE_ADMIN')")
 					.and()
 					.formLogin()
 					.loginPage("/login-panel")

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="help.send" extends="user_template">
+		<put-attribute name="content"
+			value="/WEB-INF/views/help/send.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="help.history" extends="user_template">
+		<put-attribute name="content"
+			value="/WEB-INF/views/help/history.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="help.details" extends="user_template">
+		<put-attribute name="content"
+			value="/WEB-INF/views/help/details.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>
