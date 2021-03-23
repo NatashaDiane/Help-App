@@ -1,4 +1,4 @@
-# Help-App
+# Help-App (name under construction :D)
 An app that helps teachers manage students help requests like answering students questions about a homework or a topic they dont understand and at the 
 same time keeping track of who needs help.
 
