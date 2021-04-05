@@ -10,13 +10,13 @@ Libraries & Frameworks used:
  - Bootstrap to create responsive front-end development
 
 Build tool:
-Maven
+ - Maven
 
 Data storage:
-PostgreSQL
+ - PostgreSQL
 
 Application server:
-Since the application uses spring mvc, springboot will automatically start an
-instance of apache tomcat.
+ - Since the application uses Spring MVC, Springboot will automatically start an
+   instance of Apache Tomcat.
 
 *Project is still work in progress..
