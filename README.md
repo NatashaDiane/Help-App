@@ -1,11 +1,13 @@
-# Help-App (name under construction :D)
-An app that helps teachers manage students help requests like answering students questions about a homework or a topic they dont understand and at the 
-same time keeping track of who needs help.
+# Help-App (name under construction 😄)
+An app that helps teachers to manage student help requests like answering questions about homework or a certain topic they don't understand and at the same time keeping track of who needs help.
 
 Libraries & Frameworks used:
-Spring boot for fast auto configuration, Spring MVC for http GET / POST, Spring Security for authentication and authorization of
-users in the application, Hibernate for data management, JSP for building dynamic web contents and
-Bootstrap to create responsive front-end development.
+ - Spring boot for fast auto configuration 
+ - Spring MVC for http GET / POST 
+ - Spring Security for authentication and authorization of users in the application
+ - Hibernate for data management 
+ - JSP for building dynamic web contents
+ - Bootstrap to create responsive front-end development
 
 Build tool:
 Maven
